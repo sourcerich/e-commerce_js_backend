@@ -1,24 +1,36 @@
 {
-  "name": "ecommerce-backend",
+  "name": "ecommerce-api",
   "version": "1.0.0",
-  "main": "db.js",
+  "description": "A small Express + Sequelize + TypeScript e-commerce backend (learning example)",
+  "type": "commonjs",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "build": "npm run lint && tsc",
+    "start": "nodemon --exec ts-node src/index.ts",
+    "start:prod": "node dist/index.js",
+    "lint": "eslint src --fix"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "bcrypt": "^5.1.1",
-    "body-parser": "^1.20.3",
-    "ecommerce-backend": "file:",
-    "express": "^4.21.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
-    "mysql": "^2.18.1",
-    "mysql2": "^3.11.3",
-    "sequelize": "^6.37.3",
-    "sequelizer": "^1.1.4"
+    "mysql2": "^3.15.3",
+    "sequelize": "^6.37.7"
   },
-  "description": ""
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.2.0",
+    "@eslint/js": "^9.39.0",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/node": "^20.14.0",
+    "@typescript-eslint/eslint-plugin": "^8.46.3",
+    "@typescript-eslint/parser": "^8.46.3",
+    "eslint": "^9.39.0",
+    "globals": "^15.0.0",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.0"
+  }
 }
